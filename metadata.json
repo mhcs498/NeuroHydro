@@ -1,0 +1,6 @@
+{
+  "name": "NeuroHydro: Atlas Didático de Hidrocefalia",
+  "description": "Plataforma didática e interativa de ensino médico sobre hidrocefalia: histologia do sistema ventricular, fisiopatologia, diagnóstico por imagem e tratamento neurocirúrgico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
