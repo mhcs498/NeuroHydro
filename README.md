@@ -178,6 +178,60 @@ O **NeuroHydro** foi desenvolvido para transformar esse conteúdo médico denso 
 
 ---
 
+## ☁️ Como Publicar na Vercel (Guia Passo a Passo)
+
+A aplicação já está 100% configurada para publicação imediata na **Vercel** através do arquivo `vercel.json` (com redirecionamento automático de rotas SPA e cabeçalhos de cache otimizados).
+
+### Opção 1: Publicação Direta via Repositório GitHub (Recomendada)
+1. Envie o projeto para o seu repositório no **GitHub**:
+   ```bash
+   git add .
+   git commit -m "feat: NeuroHydro pronto para Vercel"
+   git push origin main
+   ```
+2. Acesse o painel da **[Vercel](https://vercel.com)** e clique em **"Add New..." $\rightarrow$ "Project"**.
+3. Selecione o seu repositório do GitHub e clique em **"Import"**.
+4. A Vercel detectará as configurações automaticamente:
+   - **Framework Preset:** `Vite`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+   - **Install Command:** `npm install`
+5. Clique em **"Deploy"**. Em menos de 1 minuto, sua aplicação estará no ar com link público HTTPS permanente e certificado SSL automático!
+
+### Opção 2: Publicação Instantânea via Vercel CLI (Terminal)
+Caso prefira publicar diretamente do seu terminal sem passar pelo GitHub:
+1. Instale a ferramenta CLI da Vercel globalmente:
+   ```bash
+   npm install -g vercel
+   ```
+2. Na raiz do projeto, execute o comando de login e deploy:
+   ```bash
+   vercel
+   ```
+   *(Siga as instruções rápidas na tela: confirme o diretório, o escopo da conta e o nome do projeto).*
+3. Para publicar em ambiente de produção definitivo:
+   ```bash
+   vercel --prod
+   ```
+
+### ⚙️ Arquivo de Configuração Incluso (`vercel.json`):
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+---
+
 ## 📚 Referências Bibliográficas Principais
 
 - **Coulter, I. C., Dewan, M. C., Tailor, J., Ibrahim, G. M., & Kulkarni, A. V. (2021).** Endoscopic third ventriculostomy and choroid plexus cauterization (ETV/CPC) for hydrocephalus of infancy: A technical review. *Child's Nervous System*, 37(11), 3509–3519. https://doi.org/10.1007/s00381-021-05209-5
